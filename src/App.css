@@ -1,0 +1,87 @@
+:root{
+  --deslocation: 0px;
+  --out_descolation: 0px;
+  --second_deslocation: 0px;
+  --colors: [red, blue, green, yellow]
+}
+
+
+@keyframes move_previous_card {
+  0%{opacity: 1; left: var(--out_descolation);}
+  100%{opacity: 0; left: var(--deslocation)}
+}
+@keyframes move_atual_card {
+  0%{opacity: 0; left: var(--second_deslocation);}
+  100%{opacity: 1; left: 0px}
+}
+
+
+@keyframes pulse {
+  0%{opacity: 1; ;}
+  100%{opacity: 0.3; transform: scale(1.2);}
+}
+
+@keyframes inpulse {
+  0%{opacity: 0.3; transform: scale(1.2);}
+  100%{opacity: 1; transform: scale(1);}
+}
+.border{
+  border: solid 0.5px black;
+}
+.container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.allContent{
+  width: 800px;
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+
+}
+.card{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 600px;
+  height: 300px;
+  animation: move_atual_card 0.5s;
+
+}
+.active{
+ 
+ animation: move_previous_card 1s;
+}
+
+
+img{
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+}
+
+.pulse{
+  animation: pulse 0.5s linear;
+}
+
+.inpulse{
+  animation: inpulse 0.5s linear;
+}
+
+.carousel_btns{
+  width: 15px;
+  height: 15px;
+  border: solid 0.3px black;
+  border-radius:50% ;
+  box-shadow: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.carousel_btns:hover{
+  background-color: yellow;
+}
